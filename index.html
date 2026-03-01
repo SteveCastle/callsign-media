@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callsign Media — AI Products & Consulting</title>
+    <meta
+      name="description"
+      content="Callsign Media builds AI-powered products and helps businesses implement AI strategy, development workflows, and custom solutions."
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --white: #ffffff;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-400: #9ca3af;
+        --gray-500: #6b7280;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-800: #1f2937;
+        --gray-900: #111827;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --accent-light: #eff6ff;
+        --radius: 12px;
+        --radius-lg: 16px;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+        --shadow-md:
+          0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+        --shadow-lg:
+          0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        color: var(--gray-800);
+        line-height: 1.6;
+        background: var(--white);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* ---- NAV ---- */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--gray-200);
+        transition: box-shadow 0.2s;
+      }
+
+      nav.scrolled {
+        box-shadow: var(--shadow);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-brand {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--gray-900);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--gray-600);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gray-900);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--white) !important;
+        background: var(--gray-900);
+        border-radius: 8px;
+        text-decoration: none;
+        transition:
+          background 0.15s,
+          transform 0.1s;
+      }
+
+      .nav-cta:hover {
+        background: var(--gray-700);
+        transform: translateY(-1px);
+      }
+
+      .nav-hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .nav-hamburger svg {
+        display: block;
+      }
+
+      /* ---- HERO ---- */
+      .hero {
+        padding: 160px 24px 120px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .hero-content {
+        max-width: 720px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 6vw, 64px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        color: var(--gray-900);
+        margin-bottom: 24px;
+      }
+
+      .hero p {
+        font-size: clamp(18px, 2.5vw, 21px);
+        color: var(--gray-500);
+        max-width: 540px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--white);
+        background: var(--gray-900);
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          background 0.15s,
+          transform 0.1s,
+          box-shadow 0.15s;
+      }
+
+      .btn-primary:hover {
+        background: var(--gray-700);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--gray-700);
+        background: var(--white);
+        border: 1.5px solid var(--gray-300);
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          border-color 0.15s,
+          transform 0.1s,
+          box-shadow 0.15s;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--gray-400);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow);
+      }
+
+      /* ---- SECTIONS ---- */
+      .section {
+        padding: 100px 24px;
+      }
+
+      .section-gray {
+        background: var(--gray-50);
+      }
+
+      .section-dark {
+        background: var(--gray-900);
+        color: var(--white);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 64px;
+      }
+
+      .section-label {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 16px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(30px, 4vw, 40px);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+        color: var(--gray-900);
+        margin-bottom: 16px;
+      }
+
+      .section-dark .section-header h2 {
+        color: var(--white);
+      }
+
+      .section-header p {
+        font-size: 17px;
+        color: var(--gray-500);
+        line-height: 1.6;
+      }
+
+      .section-dark .section-header p {
+        color: var(--gray-400);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* ---- SERVICES ---- */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .service-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-lg);
+        padding: 36px 32px;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      .service-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+      }
+
+      .service-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--accent-light);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .service-icon svg {
+        width: 24px;
+        height: 24px;
+        color: var(--accent);
+      }
+
+      .service-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+
+      .service-card p {
+        font-size: 15px;
+        color: var(--gray-500);
+        line-height: 1.6;
+      }
+
+      /* span the last two cards to center them */
+      .services-grid .service-card:nth-child(4) {
+        grid-column: 1 / 2;
+      }
+
+      .services-last-row {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        grid-column: 1 / -1;
+      }
+
+      .services-last-row .service-card {
+        flex: 0 1 calc(33.333% - 12px);
+      }
+
+      /* ---- PRODUCTS ---- */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      .product-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+
+      .product-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+      }
+
+      .product-image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        display: block;
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .product-image-placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .product-image-placeholder img {
+        max-height: 72%;
+        max-width: 72%;
+        object-fit: contain;
+      }
+
+      .product-body {
+        padding: 28px;
+      }
+
+      .product-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .product-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      .product-body h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--gray-900);
+        letter-spacing: -0.01em;
+      }
+
+      .product-tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+      }
+
+      .product-body p {
+        font-size: 15px;
+        color: var(--gray-500);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .product-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.15s;
+      }
+
+      .product-link:hover {
+        gap: 10px;
+      }
+
+      /* ---- WHY US ---- */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+        text-align: center;
+      }
+
+      .why-item {
+        padding: 0 16px;
+      }
+
+      .why-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--accent-light);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .why-icon svg {
+        width: 28px;
+        height: 28px;
+        color: var(--accent);
+      }
+
+      .why-item h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .why-item p {
+        font-size: 15px;
+        color: var(--gray-500);
+        line-height: 1.6;
+      }
+
+      /* ---- CTA BANNER ---- */
+      .cta-banner {
+        padding: 80px 24px;
+        text-align: center;
+      }
+
+      .cta-banner h2 {
+        font-size: clamp(28px, 4vw, 38px);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        margin-bottom: 16px;
+      }
+
+      .cta-banner p {
+        font-size: 17px;
+        color: var(--gray-400);
+        margin-bottom: 36px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-white {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--gray-900);
+        background: var(--white);
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.1s,
+          box-shadow 0.15s;
+      }
+
+      .btn-white:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* ---- FOOTER ---- */
+      footer {
+        border-top: 1px solid var(--gray-200);
+        padding: 48px 24px;
+      }
+
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .footer-left {
+        font-size: 14px;
+        color: var(--gray-400);
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        list-style: none;
+      }
+
+      .footer-links a {
+        font-size: 14px;
+        color: var(--gray-400);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .footer-links a:hover {
+        color: var(--gray-600);
+      }
+
+      /* ---- MOBILE ---- */
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .services-last-row .service-card {
+          flex: 0 1 calc(50% - 12px);
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .products-grid .product-card:last-child {
+          grid-column: 1 / -1;
+          max-width: calc(50% - 16px);
+          justify-self: center;
+        }
+
+        .why-grid {
+          gap: 32px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .nav-links {
+          display: none;
+        }
+
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 64px;
+          left: 0;
+          right: 0;
+          background: var(--white);
+          border-bottom: 1px solid var(--gray-200);
+          padding: 24px;
+          gap: 20px;
+          box-shadow: var(--shadow-md);
+        }
+
+        .nav-hamburger {
+          display: block;
+        }
+
+        .hero {
+          padding: 130px 24px 80px;
+        }
+
+        .section {
+          padding: 72px 24px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .services-last-row {
+          flex-direction: column;
+        }
+
+        .services-last-row .service-card {
+          flex: 1 1 auto;
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .products-grid .product-card:last-child {
+          max-width: 100%;
+        }
+
+        .why-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .section-header {
+          margin-bottom: 48px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .hero-actions .btn-primary,
+        .hero-actions .btn-secondary {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-brand">Callsign Media</a>
+        <button
+          class="nav-hamburger"
+          onclick="
+            document.querySelector('.nav-links').classList.toggle('open')
+          "
+          aria-label="Toggle menu"
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">About</a></li>
+          <li>
+            <a href="mailto:hello@callsignmedia.com" class="nav-cta"
+              >Get in Touch</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          We build AI&#8209;powered products and help businesses
+          do&nbsp;the&nbsp;same.
+        </h1>
+        <p>
+          Callsign Media is a software studio and AI consultancy. We ship
+          production software and partner with businesses to turn AI from a
+          buzzword into&nbsp;real&nbsp;results.
+        </p>
+        <div class="hero-actions">
+          <a href="mailto:hello@callsignmedia.com" class="btn-primary">
+            Book a Consultation
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 3l6 5-6 5" />
+            </svg>
+          </a>
+          <a href="#products" class="btn-secondary">See Our Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section section-gray">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Consulting Services</span>
+          <h2>AI strategy that ships, not&nbsp;slideware</h2>
+          <p>
+            We've built AI into our own products. We bring that same hands-on
+            experience to your business.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+                />
+              </svg>
+            </div>
+            <h3>AI Strategy &amp; Roadmap</h3>
+            <p>
+              We audit your workflows, identify where AI creates genuine value,
+              and deliver a phased adoption plan with clear ROI targets. No
+              hype, just the moves that matter.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+                />
+              </svg>
+            </div>
+            <h3>AI Product Development</h3>
+            <p>
+              From concept to production, we design and build custom AI-powered
+              features and products. LLM integrations, computer vision,
+              intelligent automation&mdash;whatever the problem calls for.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                />
+              </svg>
+            </div>
+            <h3>Developer Workflow Automation</h3>
+            <p>
+              We implement AI-powered tooling across your development
+              lifecycle&mdash;code review, testing, CI/CD, documentation. Your
+              team ships faster with less overhead.
+            </p>
+          </div>
+        </div>
+
+        <div class="services-last-row" style="margin-top: 24px">
+          <!-- Card 4 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"
+                />
+              </svg>
+            </div>
+            <h3>AI Integration &amp; Migration</h3>
+            <p>
+              Add AI capabilities to your existing products without a rewrite.
+              RAG pipelines, intelligent search, content generation, and API
+              integrations that slot into what you already have.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a23.838 23.838 0 0 0-1.012 5.434c2.535.792 5.078 1.405 7.631 1.837a49.174 49.174 0 0 0 7.631-1.837 23.847 23.847 0 0 0-1.012-5.434m-15.482 0A47.578 47.578 0 0 1 12 5.14a47.579 47.579 0 0 1 7.74 5.006M12 1.5a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V2.25A.75.75 0 0 1 12 1.5Z"
+                />
+              </svg>
+            </div>
+            <h3>AI Training &amp; Workshops</h3>
+            <p>
+              Hands-on sessions that get your team comfortable building with AI.
+              From prompt engineering fundamentals to production LLM pipelines,
+              we meet your team where they are.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Products</span>
+          <h2>Software we've built and&nbsp;shipped</h2>
+          <p>
+            We don't just consult&mdash;we build. Here's what we've shipped
+            ourselves.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Lowkey -->
+          <div class="product-card">
+            <img
+              src="assets/lowkey-screenshot.jpg"
+              alt="Lowkey Media Viewer interface showing grid view with photos and tagging system"
+              class="product-image"
+            />
+            <div class="product-body">
+              <div class="product-logo-row">
+                <img
+                  src="assets/lowkey-logo.png"
+                  alt="Lowkey logo"
+                  class="product-logo"
+                />
+                <h3>Lowkey Media Viewer</h3>
+              </div>
+              <span class="product-tag">Desktop App</span>
+              <p>
+                A fast, minimalist image and video viewer for macOS and Windows.
+                Folder-based navigation, media tagging, AI-powered
+                auto-categorization, and transcript-based video search. Free and
+                open source.
+              </p>
+              <a
+                href="https://lowkeyviewer.com"
+                class="product-link"
+                target="_blank"
+                rel="noopener"
+              >
+                Visit lowkeyviewer.com
+                <svg
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 2h7v7M12 2L2 12" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ModelPad -->
+          <div class="product-card">
+            <img
+              src="assets/modelpad-preview.png"
+              alt="ModelPad AI writing application preview"
+              class="product-image"
+            />
+            <div class="product-body">
+              <div class="product-logo-row">
+                <img
+                  src="assets/modelpad-logo.svg"
+                  alt="ModelPad logo"
+                  class="product-logo"
+                />
+                <h3>ModelPad</h3>
+              </div>
+              <span class="product-tag">Web Platform</span>
+              <p>
+                An AI-powered writing and business platform. Build landing
+                pages, manage products and contacts, generate content with cloud
+                or self-hosted LLMs, and run your sales workflow from one place.
+              </p>
+              <a href="#" class="product-link">
+                Coming soon
+                <svg
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 2h7v7M12 2L2 12" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Samson -->
+          <div class="product-card">
+            <div
+              class="product-image-placeholder"
+              style="
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 100%);
+              "
+            >
+              <img src="assets/samson-screenshot.jpg" alt="Samson app icon" />
+            </div>
+            <div class="product-body">
+              <div class="product-logo-row">
+                <img
+                  src="assets/samson-icon.png"
+                  alt="Samson logo"
+                  class="product-logo"
+                />
+                <h3>Samson</h3>
+              </div>
+              <span class="product-tag">iOS App</span>
+              <p>
+                A focused fitness tracking app for structured workout routines.
+                Log sets, track personal records, visualize progress trends, and
+                follow push-pull-legs splits designed for balanced development.
+              </p>
+              <a href="#" class="product-link">
+                Coming soon
+                <svg
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 2h7v7M12 2L2 12" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why" class="section section-gray">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Why Callsign Media</span>
+          <h2>We build what we recommend</h2>
+          <p>
+            There's a difference between consultants who present slides and
+            engineers who ship software. We do&nbsp;both.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+                />
+              </svg>
+            </div>
+            <h3>We Ship Products</h3>
+            <p>
+              We maintain production software across desktop, web, and mobile.
+              Our advice comes from building real things, not theoretical
+              frameworks.
+            </p>
+          </div>
+
+          <div class="why-item">
+            <div class="why-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+                />
+              </svg>
+            </div>
+            <h3>Full Stack AI Expertise</h3>
+            <p>
+              LLM integrations, RAG pipelines, computer vision, auto-tagging,
+              transcription&mdash;we've implemented all of it in our own
+              products and can bring that depth to yours.
+            </p>
+          </div>
+
+          <div class="why-item">
+            <div class="why-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+                />
+              </svg>
+            </div>
+            <h3>Pragmatic, Not Hype</h3>
+            <p>
+              We focus on implementations that deliver real ROI. If AI isn't the
+              right tool for a problem, we'll tell you. Our reputation depends
+              on results, not buzzwords.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="section section-dark cta-banner">
+      <div class="container">
+        <h2>Ready to bring AI into your&nbsp;business?</h2>
+        <p>
+          Let's talk about where AI can create real value for your team. No
+          pitch decks, just a conversation.
+        </p>
+        <a href="mailto:hello@callsignmedia.com" class="btn-white">
+          Book a Consultation
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 3l6 5-6 5" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          &copy; 2026 Callsign Media LLC. All rights reserved.
+        </div>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="mailto:hello@callsignmedia.com">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar scroll shadow
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 10);
+      });
+
+      // Close mobile menu on link click
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector(".nav-links").classList.remove("open");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -460,6 +460,51 @@
         transition: gap 0.15s;
       }
 
+      .product-tags {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+
+      .product-tags .product-tag {
+        margin-bottom: 0;
+      }
+
+      .product-tag-open-source {
+        color: #15803d;
+        background: #f0fdf4;
+      }
+
+      .github-stars {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #ca8a04;
+        background: #fefce8;
+        padding: 3px 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+
+      .github-stars:hover {
+        background: #fef9c3;
+      }
+
+      .github-stars svg {
+        color: #eab308;
+      }
+
+      .product-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
       .product-link:hover {
         gap: 10px;
       }
@@ -972,32 +1017,71 @@
                 />
                 <h3>Lowkey Media Viewer</h3>
               </div>
-              <span class="product-tag">Desktop App</span>
+              <div class="product-tags">
+                <span class="product-tag">Desktop App</span>
+                <span class="product-tag product-tag-open-source">Open Source</span>
+                <a
+                  href="https://github.com/SteveCastle/loki"
+                  class="github-stars"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z" />
+                  </svg>
+                  65 on GitHub
+                </a>
+              </div>
               <p>
                 A fast, minimalist image and video viewer for macOS and Windows.
                 Folder-based navigation, media tagging, AI-powered
-                auto-categorization, and transcript-based video search. Free and
-                open source.
+                auto-categorization, and transcript-based video search.
               </p>
-              <a
-                href="https://lowkeyviewer.com"
-                class="product-link"
-                target="_blank"
-                rel="noopener"
-              >
-                Visit lowkeyviewer.com
-                <svg
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+              <div class="product-links">
+                <a
+                  href="https://lowkeyviewer.com"
+                  class="product-link"
+                  target="_blank"
+                  rel="noopener"
                 >
-                  <path d="M5 2h7v7M12 2L2 12" />
-                </svg>
-              </a>
+                  Visit lowkeyviewer.com
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 2h7v7M12 2L2 12" />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/SteveCastle/loki"
+                  class="product-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 2h7v7M12 2L2 12" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 

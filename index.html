@@ -464,6 +464,40 @@
         gap: 10px;
       }
 
+      /* ---- COMMUNITY ---- */
+      .community-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-lg);
+        padding: 48px;
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .community-content h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--gray-900);
+        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      .community-content p {
+        font-size: 16px;
+        color: var(--gray-500);
+        line-height: 1.6;
+        margin-bottom: 28px;
+      }
+
+      .community-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
       /* ---- WHY US ---- */
       .why-grid {
         display: grid;
@@ -1046,6 +1080,70 @@
                 >
                   <path d="M5 2h7v7M12 2L2 12" />
                 </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="community" class="section section-gray">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Community</span>
+          <h2>Code Workshop</h2>
+          <p>
+            We run a Las Vegas&ndash;based meetup and YouTube channel dedicated
+            to adventure&ndash;driven development&mdash;hands&#8209;on projects
+            that make learning to code fun.
+          </p>
+        </div>
+
+        <div class="community-card">
+          <div class="community-content">
+            <h3>It's dangerous to go&nbsp;alone.</h3>
+            <p>
+              Code Workshop brings together developers of all levels for
+              in&#8209;person meetups, live builds, and tutorials. We promote
+              friendship and mentorship through projects that capture the joy of
+              exploring computing.
+            </p>
+            <div class="community-links">
+              <a
+                href="https://codeworkshop.dev/"
+                class="btn-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                Visit codeworkshop.dev
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 2h7v7M12 2L2 12" />
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@CodeWorkshops"
+                class="btn-secondary"
+                target="_blank"
+                rel="noopener"
+              >
+                YouTube
+              </a>
+              <a
+                href="https://discord.gg/codeworkshop"
+                class="btn-secondary"
+                target="_blank"
+                rel="noopener"
+              >
+                Discord
               </a>
             </div>
           </div>
